@@ -26,6 +26,7 @@ public class ExitCollisionScript : MonoBehaviour
                 break;
             default:
                 ScoreboardHandler.Instance.AddThreePointer();
+                controller.FlickerLights();
                 break;
         }
     }

@@ -12,7 +12,7 @@ public class SpotLightShow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("GenerateRandomLights", 0.0f, 2f);
+        InvokeRepeating("GenerateRandomLights", 0.0f, 3f);
         //GenerateRandomLights();
     }
     
@@ -21,11 +21,28 @@ public class SpotLightShow : MonoBehaviour
         foreach(VLight light in lights)
         { 
             int randomNumber = random.Next(0,colors.Count - 1);
-            //Debug.Log(randomNumber);
+            //Color nextColor = colors[randomNumber];
+            //light.colorTint = Color.Lerp(light.colorTint, nextColor, 0.1f);
+            
             light.colorTint = colors[randomNumber];
-            //Debug.Log(light.colorTint);
         }
     }
 
-    //public void 
+    public void FlickerLights()
+    {
+        foreach (VLight light in lights)
+        {
+            //light.enabled = false;
+
+            Debug.Log("Flicker enabled ");
+            Invoke("LightScript(light)", 0.01f);
+        }
+    }
+
+    //Make Ienumerator for this.
+    public void LightScript(VLight script)
+    {
+        //script.enabled = true;
+        Debug.Log("Flicker disabled ");
+    }
 }
