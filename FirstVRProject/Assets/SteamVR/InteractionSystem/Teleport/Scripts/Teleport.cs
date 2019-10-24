@@ -236,7 +236,7 @@ namespace Valve.VR.InteractionSystem
 			Hand oldPointerHand = pointerHand;
 			Hand newPointerHand = null;
 
-			foreach ( Hand hand in player.hands )
+            foreach ( Hand hand in player.hands )
 			{
 				if ( visible )
 				{
@@ -493,7 +493,7 @@ namespace Valve.VR.InteractionSystem
 				return;
 			}
 
-			if ( debugFloor )
+            if ( debugFloor )
 			{
 				//Debug floor
 				TeleportArea teleportArea = pointedAtTeleportMarker as TeleportArea;

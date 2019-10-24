@@ -19,7 +19,7 @@ public class BallReset : MonoBehaviour
     }
     IEnumerator ResetBall(GameObject ball, Vector3 position)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.1f);
         //After 2 seconds... set object transform back to original position.
         ball.transform.position = position;
         Rigidbody rb = ball.GetComponent<Rigidbody>();

@@ -90,14 +90,15 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void Update()
 		{
-			if ( Application.isPlaying )
+            if ( Application.isPlaying )
 			{
 				lookAtPosition.x = player.hmdTransform.position.x;
 				lookAtPosition.y = lookAtJointTransform.position.y;
 				lookAtPosition.z = player.hmdTransform.position.z;
 
 				lookAtJointTransform.LookAt( lookAtPosition );
-			}
+
+            }
 		}
 
 
@@ -107,9 +108,8 @@ namespace Valve.VR.InteractionSystem
 			return ( Vector3.Distance( transform.position, playerPosition ) > 1.0f );
 		}
 
-
-		//-------------------------------------------------
-		public override bool ShouldMovePlayer()
+        //-------------------------------------------------
+        public override bool ShouldMovePlayer()
 		{
 			return true;
 		}
