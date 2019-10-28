@@ -20,9 +20,7 @@ public class EntryCollisionScript : MonoBehaviour
     IEnumerator EnableExitCollider()
     {
         ExitCollider.isTrigger = true;
-        Debug.Log("Bottom collision disabled");
         yield return new WaitForSeconds(2);
         ExitCollider.isTrigger = false;
-        Debug.Log("Bottom collision enabled");
     }
 }

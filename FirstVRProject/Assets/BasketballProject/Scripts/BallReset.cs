@@ -6,8 +6,6 @@ public class BallReset : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Something entered the reset trigger");
-
         if (other.tag != "Ball")
         {
             return;

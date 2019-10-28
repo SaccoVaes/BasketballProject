@@ -859,6 +859,10 @@ namespace Valve.VR.InteractionSystem
 			SteamVR_Fade.Start( Color.clear, currentFadeTime );
 
 			TeleportPoint teleportPoint = teleportingToMarker as TeleportPoint;
+
+            //When you are ready teleport to X marker. Spawn the correct rack of balls.
+            teleportingToMarker.transform.parent.SendMessage("InstantiateRack");
+
 			Vector3 teleportPosition = pointedAtPosition;
 
 			if ( teleportPoint != null )

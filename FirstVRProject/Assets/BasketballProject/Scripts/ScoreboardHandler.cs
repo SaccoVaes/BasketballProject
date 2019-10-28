@@ -19,6 +19,8 @@ public class ScoreboardHandler : MonoBehaviour
     private TextMeshProUGUI TMP_Twopointers;
     private TextMeshProUGUI TMP_Threepointers;
     private TextMeshProUGUI TMP_TotalScore;
+    
+    public int multiplier;
 
     private void Start()
     {
@@ -32,7 +34,7 @@ public class ScoreboardHandler : MonoBehaviour
     private ScoreboardHandler()
     {
         //TMP_Onepointers = GameObject.Find("OnePointerCounterLabel").GetComponent<TMPro.TextMeshProUGUI>();
-        /*/TMP_Onepointers = OnePointerLabel.GetComponent<TMPro.TextMeshProUGUI>();
+        /*TMP_Onepointers = OnePointerLabel.GetComponent<TMPro.TextMeshProUGUI>();
         TMP_Twopointers = TwoPointerLabel.GetComponent<TMPro.TextMeshProUGUI>();
         TMP_Threepointers = ThreePointerLabel.GetComponent<TMPro.TextMeshProUGUI>();*/
     }  
@@ -49,21 +51,21 @@ public class ScoreboardHandler : MonoBehaviour
 
     public void AddOnePointer()
     {
-        Onepointers++;
+        Onepointers += (1 * multiplier);
         TMP_Onepointers.text = Onepointers.ToString();
         UpdateTotalScore();
     }
 
     public void AddTwoPointer()
     {
-        Twopointers++;
+        Twopointers += (1 * multiplier);
         TMP_Twopointers.text = Twopointers.ToString();
         UpdateTotalScore();
     }
 
     public void AddThreePointer()
     {
-        Threepointers++;
+        Threepointers += (1 * multiplier);
         TMP_Threepointers.text = Threepointers.ToString();
         UpdateTotalScore();
     }
