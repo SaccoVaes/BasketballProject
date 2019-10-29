@@ -6,21 +6,27 @@ public class OriginalBallLocation : MonoBehaviour
 {
     private Transform originalTransform;
     private Vector3 originalPosition;
+
+    private Rigidbody rb;
     // Start is called before the first frame update
 
     void Start()
     {
-        //Voor ball v1
-        //originalTransform = this.transform.parent;
         originalTransform = this.transform;
-
+        rb = this.gameObject.GetComponent<Rigidbody>();
         //Debug.Log(originalTransform);
         originalPosition = originalTransform.position;
-        //Debug.Log(originalPosition);
     }
 
     public Vector3 GetOriginalTransformPosition()
     {
         return originalPosition;
+    }
+
+    public void SetKinematic(bool isKinematic)
+    {
+        Debug.Log(rb.isKinematic);
+        rb.isKinematic = isKinematic;
+        Debug.Log(rb.isKinematic);
     }
 }
